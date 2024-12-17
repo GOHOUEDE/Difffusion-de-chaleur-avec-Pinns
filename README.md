@@ -3,7 +3,7 @@
 
 # Simulation de la difusion de chaleur avec les  Réseaux de Neuronesinformé par la physique (Pinns).
 
-Ce projet implémente un réseau de neurones profond pour résoudre une équation différentielle partielle (PDE) à l'aide de la méthode des réseaux de neurones basés sur la physique (Physics-Informed Neural Networks - PINNs). Il utilise PyTorch pour l'entraînement et la résolution de l'EDP et inclut des méthodes d'optimisation comme Adam et L-BFGS pour la minimisation de la perte.
+Ce projet implémente un réseau de neurones profond informé par la physique  pour résoudre une équation différentielle partielle (PDE) de la diffussion de chaleur  à l'aide de la méthode des réseaux de neurones basés sur la physique (Physics-Informed Neural Networks - PINNs). Nous utilisons PyTorch pour l'entraînement et la résolution  et inclut les méthodes d'optimisation  Adam et L-BFGS pour la minimisation de la perte.
 
 ## Installation
 
@@ -17,9 +17,10 @@ pip install torch matplotlib scikit-learn pyDOE scipy
 
 Voici les principaux fichiers du projet :
 
-- **main.py** : Script principal où le modèle est défini et entraîné.
+- **Chaleur_pinns.ipynb** : Le notebook qui présente le travail(code ,chargement et graphiques).
+- - **code.py** : Contient l'intégralité des codes python pour la simulation de la difussion de chaleur.
 - **README.md** : Documentation du projet.
-- **utils.py** : (Optionnel) Contient des fonctions utilitaires comme le traçage des courbes 3D.
+
   
 ## Description du modèle
 
@@ -50,6 +51,5 @@ Le réseau suit les étapes suivantes :
 
 ## Résultats
 
-Une fois le modèle formé, les résultats peuvent être visualisés en 3D pour observer la solution de l'EDP dans le domaine spatial et temporel. 
 
 
