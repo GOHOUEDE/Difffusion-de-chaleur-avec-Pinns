@@ -1,13 +1,13 @@
 
 ---
 
-# Projet de Réseau de Neurones pour Résoudre une Équation Différentielle Partielle (PDE)
+# Simulation de la difusion de chaleur avec les  Réseaux de Neuronesinformé par la physique (Pinns).
 
 Ce projet implémente un réseau de neurones profond pour résoudre une équation différentielle partielle (PDE) à l'aide de la méthode des réseaux de neurones basés sur la physique (Physics-Informed Neural Networks - PINNs). Il utilise PyTorch pour l'entraînement et la résolution de l'EDP et inclut des méthodes d'optimisation comme Adam et L-BFGS pour la minimisation de la perte.
 
 ## Installation
 
-Assurez-vous d'avoir les dépendances nécessaires installées. Vous pouvez utiliser `pip` pour installer les bibliothèques suivantes :
+Assurez-vous d'avoir les dépendances nécessaires installées :
 
 ```bash
 pip install torch matplotlib scikit-learn pyDOE scipy
@@ -47,34 +47,6 @@ Le réseau suit les étapes suivantes :
 
 ### Exemple de génération de données et entraînement
 
-```python
-# Charger les bibliothèques nécessaires
-import torch
-from torch import nn
-import numpy as np
-import matplotlib.pyplot as plt
-from pyDOE import lhs
-
-# Définir la fonction réelle de la PDE
-def f_real(x, t):
-    return torch.exp(-t) * torch.sin(np.pi * x)
-
-# Définir le modèle PINN
-class FCN(nn.Module):
-    def __init__(self, layers):
-        super(FCN, self).__init__()
-        self.activation = nn.Tanh()
-        self.loss_function = nn.MSELoss(reduction='mean')
-        self.linears = nn.ModuleList([nn.Linear(layers[i], layers[i + 1]) for i in range(len(layers) - 1)])
-
-    def forward(self, x):
-        a = x.float()
-        for i in range(len(self.linears) - 1):
-            a = self.activation(self.linears[i](a))
-        return self.linears[-1](a)
-
-# Initialisation et entraînement...
-```
 
 ## Résultats
 
