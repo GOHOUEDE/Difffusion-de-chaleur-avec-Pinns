@@ -1,10 +1,13 @@
 
 ---
 
-#🔰 Simulation de la difusion de chaleur avec les  Réseaux de Neuronesinformé par la physique (Pinns).
+# 🔰Simulation de la difusion de chaleur avec les  Réseaux de Neuronesinformé par la physique (Pinns).
 
 Ce projet est mon projet tutoré lor de ma troisième année en Génie Mathématique et Modélisation à l'ENSGMM.
 Ic on implémente un réseau de neurones profond informé par la physique  pour résoudre une équation différentielle partielle (PDE) de la diffussion de chaleur  à l'aide de la méthode des réseaux de neurones basés sur la physique (Physics-Informed Neural Networks - PINNs). Nous utilisons PyTorch pour l'entraînement et la résolution  et inclut les méthodes d'optimisation  Adam et L-BFGS pour la minimisation de la perte.
+                        <p align="center">
+  <img src="https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/ac.png" width="50%" />
+</p>
 
 ## Installation :
 
@@ -56,7 +59,7 @@ Pour générer de nouvelles données, nous définissons une plage de valeurs pou
 Pour commencer, nous avons tracé notre solution analytique, voici les figures obtenues :
 
 - **Figures**: Solution analytique du modèle (image 1D et 2D)
-  ![Description de l'image](plots/output_13_0.png)
+-   ![Description de l'image](plots/output_13_0.png)
 -   ![Description de l'image](plots/output_13_1.png)
 
 
@@ -71,24 +74,24 @@ On peut constater que le réseau a appris les \(Nu\) données expérimentales et
 ## 7.2 Réseau Entraîné avec la Perte MSEf
 
 Contrairement au cas précédent, on peut constater que le réseau a appris l’EDP, mais cette fois-ci, il n'a pas appris les conditions initiales et limites. Une différence maximale de 0.09 est également observée. Les valeurs prédites sont proches des réelles.
-  ![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/msef1.png)
+-  ![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/msef1.png)
 - **Figure 8**: Modèle entraîné avec la perte MSEf seule (Plan 1D)
-  ![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/msef%202.png)
+-  ![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/msef%202.png)
 - **Figure 9**: Modèle entraîné avec la perte MSEf seule (Plan 2D)
 
 ## 7.3 Réseau PINN
 
 Maintenant, nous entraînons notre réseau PINN avec une perte égale à la somme des deux autres. Il est évident que le réseau apprend à la fois l’EDP et les conditions initiales et limites.
- ![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/output_14_0.png)
+- ![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/output_14_0.png)
 - **Figure 10**: Solution analytique du modèle (image 1D)
- ![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/output_14_1.png)
+- ![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/output_14_1.png)
 - **Figure 11**: Solution analytique du modèle (image 2D)
 
 ## Comparaison MSE
 
 - On peut constater une simulation du phénomène proche du réel.
-  -![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/REEL.png)
+- ![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/REEL.png)
 - Ici la diréfence entre valeur réelles et valeurs prédictes:
- -![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/output_15_0.png)
+- ![Description de l'image](https://github.com/GOHOUEDE/Difffusion-de-chaleur-avec-Pinns/blob/main/plots/output_15_0.png)
 
 
